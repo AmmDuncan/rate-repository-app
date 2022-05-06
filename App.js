@@ -1,11 +1,16 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+
+import Main from './src/components/Main';
+import AppBar from './src/components/AppBar';
+import theme from './src/theme';
+import { NativeRouter } from "react-router-native";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Hey there! My first React Native App😄</Text>
-      <StatusBar style="auto" />
+      <NativeRouter>
+      <Main />
+      </NativeRouter>
     </View>
   );
 }
@@ -13,8 +18,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
+    alignItems: 'stretch',
     justifyContent: 'center',
+    backgroundColor: theme.colors.background
   },
 });
